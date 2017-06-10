@@ -1,3 +1,7 @@
+.content_wrapper {
+display: none;
+}
+
 .form_style #contentText {
 	border: 1px solid #CCCCCC;
 	border-radius: 5px;
