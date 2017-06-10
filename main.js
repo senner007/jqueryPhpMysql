@@ -1,6 +1,3 @@
-
-
-
 $(document).ready(function() {
 
 	//##### send add record Ajax request to response.php #########
@@ -31,23 +28,7 @@ $(document).ready(function() {
       }
       jqueryAjax('response.php', myData, callbackObj)
 
-      // jQuery.ajax({
-			// type: "POST", // HTTP method POST or GET
-			// url: "response.php", //Where to make Ajax calls
-			// dataType:"text", // Data type, HTML, json etc.
-			// data:myData, //Form variables
-			// success:function(response){
-      //
-      //
-			// },
-			// error:function (xhr, ajaxOptions, thrownError){
-			// 	$("#FormSubmit").show(); //show submit button
-			// 	$("#LoadingImage").hide(); //hide loading image
-			// 	alert(thrownError);
-			// }
-			// });
 	});
-
 
 // ############# login here  ################
 	$("#loginSubmit").click(function (e) {
@@ -63,7 +44,6 @@ $(document).ready(function() {
         success: function (response) {
           if (response == 'clear') {
 							$(".content_wrapper").show();
-
 					}
         },
         error: function (xhr, ajaxOptions, thrownError){
@@ -73,25 +53,6 @@ $(document).ready(function() {
       }
       jqueryAjax('login.php', myData, callbackObj)
 
-      // jQuery.ajax({
-			// 	type: "POST", // HTTP method POST or GET
-			// 	url: "login.php", //Where to make Ajax calls
-			// 	dataType:"text", // Data type, HTML, json etc.
-			// 	data:myData, //Form variables
-			// 	success:function(response){
-			// 		if (response == 'clear') {
-			// 				$(".content_wrapper").show();
-      //
-			// 		}
-			// 		//on success, hide  element user wants to delete.
-			// 		//$("#loginSubmit").hide(); //hide submit button
-			// 	 //	$("#LoadingImage").show(); //show loading image
-			// 		},
-			// 	error:function (xhr, ajaxOptions, thrownError){
-			// 		//On error, we alert user
-			// 		alert(thrownError);
-			// 	}
-			// });
 	});
 
 	//##### Send delete Ajax request to response.php #########
@@ -114,31 +75,18 @@ $(document).ready(function() {
       }
     }
     jqueryAjax('response.php', myData, callbackObj)
-			// jQuery.ajax({
-			// 	type: "POST", // HTTP method POST or GET
-			// 	url: "response.php", //Where to make Ajax calls
-			// 	dataType:"text", // Data type, HTML, json etc.
-			// 	data:myData, //Form variables
-			// 	success:function(response){
-			// 		//on success, hide  element user wants to delete.
-			// 		$('#item_'+DbNumberID).fadeOut();
-			// 	},
-			// 	error:function (xhr, ajaxOptions, thrownError){
-			// 		//On error, we alert user
-			// 		alert(thrownError);
-			// 	}
-			// });
+
 	});
 
-function jqueryAjax(file, myData, callback) {
-    jQuery.ajax({
-      type: "POST", // HTTP method POST or GET
-      url: file, //Where to make Ajax calls
-      dataType:"text", // Data type, HTML, json etc.
-      data:myData, //Form variables
-      success: callback.success,
-      error: callback.error
-    });
-}
+  function jqueryAjax(file, myData, callback) {
+      jQuery.ajax({
+        type: "POST", // HTTP method POST or GET
+        url: file, //Where to make Ajax calls
+        dataType:"text", // Data type, HTML, json etc.
+        data:myData, //Form variables
+        success: callback.success,
+        error: callback.error
+      });
+  }
 
 });
