@@ -1,5 +1,8 @@
 $(document).ready(function() {
 
+var $formSubmit = document.getElementById("FormSubmit");
+var $loadImage = document.getElementById("LoadingImage");
+
 	//##### send add record Ajax request to response.php #########
 	$("#FormSubmit").click(function (e) {
 			e.preventDefault();
@@ -8,7 +11,6 @@ $(document).ready(function() {
 				alert("Please enter some text!");
 				return false;
 			}
-
 			$("#FormSubmit").hide(); //hide submit button
 			$("#LoadingImage").show(); //show loading image
 
@@ -35,11 +37,13 @@ $(document).ready(function() {
 			e.preventDefault();
 			if($("#loginText").val()==='')
 			{
+
 				alert("Please enter a login!");
 				return false;
 			}
 
-			var myData = 'login_txt='+ $("#loginTxt").val();
+			var myData = 'login_txt='+
+      $("#loginTxt").val();
       var callbackObj = {
         success: function (response) {
           if (response == 'clear') {
